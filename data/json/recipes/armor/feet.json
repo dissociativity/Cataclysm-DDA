@@ -18,10 +18,10 @@
     "subcategory": "CSC_ARMOR_FEET",
     "skill_used": "tailor",
     "difficulty": 2,
-    "time": "35 m",
+    "time": "780 m",
     "autolearn": true,
-    "using": [ [ "sewing_standard", 10 ] ],
-    "components": [ [ [ "leather", 10 ], [ "tanned_hide", 2 ] ] ]
+    "byproducts": [ [ "leather", 9 ], [ "scrap_leather", 29 ] ],
+    "using": [ [ "tailoring_leather_small", 4 ] ]
   },
   {
     "result": "boots_chitin",
@@ -30,10 +30,13 @@
     "subcategory": "CSC_ARMOR_FEET",
     "skill_used": "tailor",
     "difficulty": 4,
-    "time": "40 m",
+    "time": "610 m",
     "autolearn": true,
-    "using": [ [ "cordage", 1 ] ],
-    "components": [ [ [ "chitin_piece", 20 ] ], [ [ "leather", 4 ], [ "fur", 4 ], [ "rag", 4 ] ] ]
+    "using": [ [  ] ],
+    "time": "410 m",
+    "autolearn": true,
+    "byproducts": [ [ "scrap_leather", 80 ] ],
+    "using": [ [ "armor_chitin", 5 ], [ "tailoring_leather_small", 2 ], [ "cordage", 1 ] ]
   },
   {
     "result": "boots_acidchitin",
@@ -43,11 +46,10 @@
     "skill_used": "tailor",
     "difficulty": 5,
     "skills_required": [ [ "survival", 4 ], [ "firstaid", 2 ] ],
-    "time": "1 h 20 m",
+    "time": "390 m",
     "autolearn": true,
-    "using": [ [ "cordage", 1 ] ],
-    "qualities": [ { "id": "CUT_FINE", "level": 1 }, { "id": "SEW", "level": 1 } ],
-    "components": [ [ [ "acidchitin_piece", 20 ] ], [ [ "leather", 4 ], [ "fur", 4 ], [ "rag", 4 ] ] ]
+    "byproducts": [ [ "scrap_leather", 80 ] ],
+    "using": [ [ "armor_acidchitin", 5 ], [ "tailoring_leather_small", 2 ], [ "cordage", 1 ] ]
   },
   {
     "result": "boots_fsurvivor",
@@ -57,13 +59,12 @@
     "skill_used": "tailor",
     "difficulty": 8,
     "skills_required": [ "fabrication", 6 ],
-    "time": "2 h",
+    "time": "140 m",
     "autolearn": true,
-    "using": [ [ "sewing_standard", 80 ] ],
+    "using": [ [ "tailoring_nomex_patchwork", 1 ], [ "armor_kevlar_plate", 4 ] ],
     "tools": [ [ [ "welder", 21 ], [ "welder_crude", 32 ], [ "soldering_iron", 32 ], [ "toolset", 32 ] ] ],
     "components": [
       [ [ "nomex", 8 ] ],
-      [ [ "kevlar_plate", 4 ] ],
       [ [ "duct_tape", 200 ] ],
       [ [ "nomex_socks", 1 ] ],
       [ [ "boots_combat", 1 ], [ "boots_steel", 1 ], [ "boots_bunker", 1 ] ]
@@ -77,11 +78,11 @@
     "skill_used": "tailor",
     "difficulty": 2,
     "skills_required": [ "survival", 1 ],
-    "time": "40 m",
+    "time": "360 m",
     "autolearn": true,
     "book_learn": [ [ "textbook_survival", 1 ] ],
-    "using": [ [ "sewing_standard", 13 ] ],
-    "components": [ [ [ "leather", 7 ], [ "tanned_hide", 1 ] ], [ [ "fur", 7 ], [ "tanned_pelt", 1 ] ] ]
+    "byproducts": [ [ "scrap_leather", 40 ], [ "scrap_fur", 23 ] ]
+    "using": [ [ "tailoring_fur_small", 1 ], [ "tailoring_leather_small", 2 ] ]
   },
   {
     "result": "boots_h20survivor",
@@ -91,9 +92,9 @@
     "skill_used": "tailor",
     "difficulty": 7,
     "skills_required": [ "fabrication", 6 ],
-    "time": "2 h",
+    "time": "740 m",
     "autolearn": true,
-    "using": [ [ "sewing_standard", 80 ] ],
+    "using": [ [ "armor_kevlar_plate", 4 ] ],
     "tools": [ [ [ "welder", 21 ], [ "welder_crude", 32 ], [ "soldering_iron", 32 ], [ "toolset", 32 ] ] ],
     "components": [
       [ [ "plastic_chunk", 4 ] ],
@@ -111,9 +112,9 @@
     "skill_used": "tailor",
     "difficulty": 7,
     "skills_required": [ "fabrication", 5 ],
-    "time": "2 h",
+    "time": "260 m",
     "autolearn": true,
-    "using": [ [ "sewing_standard", 60 ] ],
+    "using": [ [ "tailoring_leather_small", 1 ], [ "armor_kevlar_plate", 4 ] ],
     "tools": [ [ [ "welder", 42 ], [ "welder_crude", 63 ], [ "soldering_iron", 63 ], [ "toolset", 63 ] ] ],
     "components": [
       [ [ "rag", 4 ] ],
@@ -133,7 +134,7 @@
     "difficulty": 2,
     "time": "40 m",
     "autolearn": true,
-    "using": [ [ "sewing_standard", 24 ] ],
+    "using": [ [ "tailoring_leather", 2 ] ],
     "components": [ [ [ "leather", 18 ], [ "tanned_hide", 3 ], [ "fur", 18 ], [ "tanned_pelt", 3 ] ] ]
   },
   {
@@ -144,13 +145,11 @@
     "skill_used": "tailor",
     "difficulty": 5,
     "skills_required": [ "fabrication", 3 ],
-    "time": "2 h",
+    "time": "220 m",
     "autolearn": true,
-    "using": [ [ "sewing_standard", 80 ] ],
+    "using": [ [ "tailoring_cotton_patchwork", 2 ], [ "armor_kevlar_plate", 4 ] ],
     "tools": [ [ [ "welder", 21 ], [ "welder_crude", 32 ], [ "soldering_iron", 32 ], [ "toolset", 32 ] ] ],
     "components": [
-      [ [ "rag", 8 ] ],
-      [ [ "kevlar_plate", 4 ] ],
       [ [ "duct_tape", 100 ] ],
       [ [ "boots_combat", 1 ], [ "boots_steel", 1 ], [ "boots_hiking", 1 ], [ "boots_bunker", 1 ], [ "boots", 1 ] ]
     ]
@@ -192,13 +191,11 @@
     "skill_used": "tailor",
     "difficulty": 6,
     "skills_required": [ "fabrication", 4 ],
-    "time": "2 h",
+    "time": "220 m",
     "autolearn": true,
-    "using": [ [ "sewing_standard", 80 ] ],
+    "using": [ [ "tailoring_leather_small", 1 ], [ "armor_kevlar_plate", 4 ] ],
     "tools": [ [ [ "welder", 21 ], [ "welder_crude", 32 ], [ "soldering_iron", 32 ], [ "toolset", 32 ] ] ],
     "components": [
-      [ [ "leather", 8 ], [ "tanned_hide", 2 ] ],
-      [ [ "kevlar_plate", 4 ] ],
       [ [ "duct_tape", 100 ] ],
       [ [ "boots_combat", 1 ], [ "boots_steel", 1 ], [ "boots_hiking", 1 ], [ "boots_bunker", 1 ], [ "boots", 1 ] ]
     ]
@@ -210,9 +207,9 @@
     "subcategory": "CSC_ARMOR_FEET",
     "skill_used": "tailor",
     "difficulty": 5,
-    "time": "35 m",
+    "time": "‭540‬ m",
     "book_learn": [ [ "textbook_tailor", 4 ], [ "tailor_portfolio", 5 ] ],
-    "using": [ [ "sewing_standard", 20 ] ],
+    "using": [ [ "tailoring_leather", 3 ] ],
     "components": [ [ [ "leather", 12 ], [ "tanned_hide", 2 ] ] ]
   },
   {
@@ -224,7 +221,7 @@
     "difficulty": 6,
     "time": "6 h",
     "autolearn": true,
-    "using": [ [ "sewing_standard", 80 ] ],
+    "using": [ [ "tailoring_felt_patchwork", 4 ] ],
     "components": [ [ [ "felt_patch", 20 ] ], [ [ "bag_plastic", 8 ] ] ]
   },
   {
@@ -237,11 +234,9 @@
     "skills_required": [ "fabrication", 5 ],
     "time": "2 h",
     "autolearn": true,
-    "using": [ [ "sewing_standard", 80 ] ],
+    "using": [ [ "tailoring_fur_small", 8 ], [ "armor_kevlar_plate", 4 ] ],
     "tools": [ [ [ "welder", 21 ], [ "welder_crude", 32 ], [ "soldering_iron", 32 ], [ "toolset", 32 ] ] ],
     "components": [
-      [ [ "fur", 12 ], [ "tanned_pelt", 2 ] ],
-      [ [ "kevlar_plate", 4 ] ],
       [ [ "duct_tape", 100 ] ],
       [ [ "boots_combat", 1 ], [ "boots_steel", 1 ], [ "boots_hiking", 1 ], [ "boots_bunker", 1 ], [ "boots", 1 ] ]
     ]
@@ -254,15 +249,13 @@
     "skill_used": "tailor",
     "difficulty": 6,
     "skills_required": [ "fabrication", 4 ],
-    "time": "3 h",
+    "time": "910 m",
     "autolearn": true,
-    "using": [ [ "sewing_standard", 160 ] ],
+    "using": [ [ "tailoring_cotton_patchwork", 1 ], [ "tailoring_leather_small", 4 ], [ "armor_kevlar_plate", 10 ] ],
     "tools": [ [ [ "welder", 42 ], [ "welder_crude", 63 ], [ "soldering_iron", 63 ], [ "toolset", 63 ] ] ],
     "components": [
-      [ [ "leather", 24 ], [ "tanned_hide", 4 ] ],
-      [ [ "rag", 6 ] ],
       [ [ "scrap", 4 ] ],
-      [ [ "boots_combat", 2 ], [ "kevlar_plate", 10 ] ],
+      [ [ "boots_combat", 2 ] ],
       [ [ "duct_tape", 200 ] ]
     ]
   },
@@ -357,9 +350,10 @@
     "subcategory": "CSC_ARMOR_FEET",
     "skill_used": "tailor",
     "difficulty": 1,
-    "time": "20 m",
+    "time": "40 m",
     "autolearn": true,
     "using": [ [ "sewing_standard", 5 ] ],
+    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "LEATHER_AWL", "level": 1 } ],
     "components": [ [ [ "leather", 3 ] ] ]
   },
   {
@@ -369,11 +363,10 @@
     "subcategory": "CSC_ARMOR_FEET",
     "skill_used": "tailor",
     "difficulty": 1,
-    "time": "30 m",
+    "time": "180 m",
     "autolearn": true,
     "book_learn": [ [ "textbook_survival", 0 ], [ "pocket_survival", 0 ] ],
-    "using": [ [ "sewing_standard", 5 ] ],
-    "components": [ [ [ "fur", 2 ] ] ]
+    "using": [ [ "tailoring_fur_small", 1 ] ],
   },
   {
     "result": "nomex_socks",
@@ -382,10 +375,9 @@
     "subcategory": "CSC_ARMOR_FEET",
     "skill_used": "tailor",
     "difficulty": 6,
-    "time": "24 m",
+    "time": "90 m",
     "book_learn": [ [ "textbook_fireman", 6 ], [ "textbook_tailor", 5 ], [ "tailor_portfolio", 5 ] ],
-    "using": [ [ "sewing_standard", 12 ] ],
-    "components": [ [ [ "nomex", 9 ] ] ]
+    "using": [ [ "tailoring_nomex_patchwork", 1 ] ]
   },
   {
     "result": "xlnomex_socks",
@@ -394,10 +386,9 @@
     "subcategory": "CSC_ARMOR_FEET",
     "skill_used": "tailor",
     "difficulty": 6,
-    "time": "37 m",
+    "time": "120 m",
     "book_learn": [ [ "textbook_fireman", 6 ], [ "textbook_tailor", 5 ], [ "tailor_portfolio", 5 ] ],
-    "using": [ [ "sewing_standard", 20 ] ],
-    "components": [ [ [ "nomex", 18 ] ] ]
+    "using": [ [ "tailoring_nomex_patchwork", 1 ] ],
   },
   {
     "result": "shoes_birchbark",
@@ -418,7 +409,7 @@
     "category": "CC_ARMOR",
     "subcategory": "CSC_ARMOR_FEET",
     "skill_used": "tailor",
-    "time": "10 m",
+    "time": "20 m",
     "autolearn": true,
     "using": [ [ "sewing_standard", 4 ] ],
     "components": [ [ [ "rag", 2 ] ] ]
@@ -429,10 +420,10 @@
     "category": "CC_ARMOR",
     "subcategory": "CSC_ARMOR_FEET",
     "skill_used": "tailor",
-    "time": "15 m",
+    "time": "60 m",
     "autolearn": true,
-    "using": [ [ "sewing_standard", 4 ] ],
-    "components": [ [ [ "rag", 4 ] ] ]
+    "byproducts": [ [ "scrap_cotton", 13 ] ],
+    "using": [ [ "tailoring_cotton_patchwork", 1 ] ]
   },
   {
     "result": "socks_bag",
@@ -477,8 +468,8 @@
     "skill_used": "tailor",
     "time": "10 m",
     "autolearn": true,
-    "using": [ [ "sewing_standard", 4 ] ],
-    "components": [ [ [ "rag", 2 ] ] ]
+    "byproducts": [ [ "scrap_cotton", 13 ] ],
+    "using": [ [ "tailoring_cotton_patchwork", 1 ] ]
   },
   {
     "result": "stockings",
@@ -489,8 +480,10 @@
     "difficulty": 1,
     "time": "10 m",
     "autolearn": true,
-    "using": [ [ "sewing_standard", 6 ] ],
-    "components": [ [ [ "rag", 8 ] ] ]
+    "time": "180 m",
+    "autolearn": true,
+    "byproducts": [ [ "scrap_cotton", 26 ] ],
+    "using": [ [ "tailoring_cotton_patchwork", 2 ] ]
   },
   {
     "result": "straw_sandals",
