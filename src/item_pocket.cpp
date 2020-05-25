@@ -295,11 +295,6 @@ units::volume item_pocket::volume_capacity() const
     return data->volume_capacity;
 }
 
-units::mass item_pocket::weight_capacity() const
-{
-    return data->max_contains_weight;
-}
-
 units::volume item_pocket::max_contains_volume() const
 {
     return data->max_contains_volume();
@@ -638,38 +633,37 @@ void item_pocket::general_info( std::vector<iteminfo> &info, int pocket_number,
         const std::string pocket_num = string_format( _( "Pocket %d:" ), pocket_number );
         info.emplace_back( "DESCRIPTION", pocket_num );
     }
-
-    info.push_back( vol_to_info( "CONTAINER", _( "Volume: " ), volume_capacity() ) );
-    info.push_back( weight_to_info( "CONTAINER", _( "  Weight: " ), weight_capacity() ) );
-    info.back().bNewLine = true;
-
-    if( data->max_item_length != 0_mm ) {
-        info.back().bNewLine = true;
-        info.push_back( iteminfo( "BASE", _( "Maximum item length: " ),
-                                  string_format( "<num> %s", length_units( data->max_item_length ) ),
-                                  iteminfo::lower_is_better,
-                                  convert_length( data->max_item_length ) ) );
+    if( data->rigid ) {
+        info.emplace_back( "DESCRIPTION", _( "This pocket is <info>rigid</info>." ) );
     }
-
     if( data->min_item_volume > 0_ml ) {
         info.emplace_back( "DESCRIPTION",
-                           string_format( _( "Minimum item volume: <neutral>%s</neutral>" ),
+                           string_format( _( "Minimum volume of item allowed: <neutral>%s</neutral>" ),
                                           vol_to_string( data->min_item_volume ) ) );
     }
 
     if( data->max_item_volume ) {
         info.emplace_back( "DESCRIPTION",
-                           string_format( _( "Maximum item volume: <neutral>%s</neutral>" ),
+                           string_format( _( "Maximum volume of item allowed: <neutral>%s</neutral>" ),
                                           vol_to_string( *data->max_item_volume ) ) );
     }
 
-    info.emplace_back( "DESCRIPTION",
-                       string_format( _( "Base moves to remove item: <neutral>%d</neutral>" ),
-                                      data->moves ) );
-
-    if( data->rigid ) {
-        info.emplace_back( "DESCRIPTION", _( "This pocket is <info>rigid</info>." ) );
+    if( data->max_item_length != 0_mm ) {
+        info.push_back( iteminfo( "BASE", _( "Max Item Length: " ),
+                                  string_format( "<num> %s", length_units( data->max_item_length ) ),
+                                  iteminfo::lower_is_better,
+                                  convert_length( data->max_item_length ) ) );
     }
+
+    info.emplace_back( "DESCRIPTION", string_format( _( "Volume Capacity: <neutral>%s</neutral>" ),
+                       vol_to_string( volume_capacity() ) ) );
+
+    info.emplace_back( "DESCRIPTION", string_format( _( "Weight Capacity: <neutral>%s</neutral>" ),
+                       weight_to_string( data->max_contains_weight ) ) );
+
+    info.emplace_back( "DESCRIPTION",
+                       string_format( _( "Base moves to take an item out: <neutral>%d</neutral>" ),
+                                      data->moves ) );
 
     if( data->watertight ) {
         info.emplace_back( "DESCRIPTION",
@@ -732,13 +726,14 @@ void item_pocket::contents_info( std::vector<iteminfo> &info, int pocket_number,
     if( sealed() ) {
         info.emplace_back( "DESCRIPTION", _( "This pocket is <info>sealed</info>." ) );
     }
-
-    info.emplace_back( vol_to_info( "CONTAINER", _( "Volume: " ), contains_volume() ) );
-    info.emplace_back( vol_to_info( "CONTAINER", _( " of " ), volume_capacity() ) );
-
-    info.back().bNewLine = true;
-    info.emplace_back( weight_to_info( "CONTAINER", _( "Weight: " ), contains_weight() ) );
-    info.emplace_back( weight_to_info( "CONTAINER", _( " of " ), weight_capacity() ) );
+    info.emplace_back( "DESCRIPTION",
+                       string_format( "%s: <neutral>%s / %s</neutral>", _( "Volume" ),
+                                      vol_to_string( contains_volume() ),
+                                      vol_to_string( volume_capacity() ) ) );
+    info.emplace_back( "DESCRIPTION",
+                       string_format( "%s: <neutral>%s / %s</neutral>", _( "Weight" ),
+                                      weight_to_string( contains_weight() ),
+                                      weight_to_string( data->max_contains_weight ) ) );
 
     bool contents_header = false;
     for( const item &contents_item : contents ) {
@@ -881,7 +876,7 @@ ret_val<item_pocket::contain_code> item_pocket::can_contain( const item &it ) co
         return ret_val<item_pocket::contain_code>::make_failure(
                    contain_code::ERR_TOO_SMALL, _( "item is too small" ) );
     }
-    if( it.weight() > weight_capacity() ) {
+    if( it.weight() > data->max_contains_weight ) {
         return ret_val<item_pocket::contain_code>::make_failure(
                    contain_code::ERR_TOO_HEAVY, _( "item is too heavy" ) );
     }
@@ -1242,7 +1237,7 @@ units::mass item_pocket::contains_weight() const
 
 units::mass item_pocket::remaining_weight() const
 {
-    return weight_capacity() - contains_weight();
+    return data->max_contains_weight - contains_weight();
 }
 
 int item_pocket::best_quality( const quality_id &id ) const

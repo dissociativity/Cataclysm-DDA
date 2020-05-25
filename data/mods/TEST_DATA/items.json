@@ -450,9 +450,9 @@
         "watertight": true,
         "rigid": true,
         "max_contains_volume": "3750 ml",
-        "max_item_volume": "15 ml",
+        "max_item_volume": "20 ml",
         "max_contains_weight": "5 kg",
-        "moves": 100
+        "moves": 400
       }
     ]
   },
@@ -471,15 +471,7 @@
     "symbol": ")",
     "color": "brown",
     "armor_data": { "covers": [ "LEG_EITHER" ], "coverage": 5, "material_thickness": 2 },
-    "pocket_data": [
-      {
-        "max_item_volume": "15 ml",
-        "max_contains_volume": "1500 ml",
-        "max_contains_weight": "3 kg",
-        "watertight": true,
-        "rigid": false
-      }
-    ],
+    "pocket_data": [ { "max_contains_volume": "1500 ml", "max_contains_weight": "3 kg", "watertight": true } ],
     "flags": [ "WAIST", "WATER_FRIENDLY" ]
   },
   {
