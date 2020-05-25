@@ -433,8 +433,8 @@
       [ "smoxygen_tank", 25 ],
       [ "bfipowder", 15 ],
       [ "quikclot", 10 ],
-      [ "anesthetic", 20 ],
-      [ "anesthetic_kit", 10 ]
+      { "item": "anesthetic", "prob": 20, "count": [ 1, 3 ], "charges-min": 25, "container-item": "jar_glass" },
+      { "item": "anesthetic_kit", "prob": 10, "charges-min": 0, "charges-max": 3000 }
     ]
   },
   {
